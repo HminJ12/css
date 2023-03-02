@@ -1,0 +1,54 @@
+.ex1 div span.style{
+  color: red;
+}
+
+.ex2 * * {
+ color: red;
+}
+
+/* 
+.ex3 div ~ div *{
+  color: red;
+} 
+*/
+
+.ex3 p + div * {
+  color: red;
+}
+
+.ex4 div :first-child{
+  color: red;
+}
+
+.ex5 > div:last-child{
+  color: red;
+}
+
+.ex6 div:nth-child(3) *{
+  background-color: red;
+}
+
+.ex7 div :nth-child(2){
+  background-color: yellow;
+}
+
+.ex8 div :nth-last-child(4) ~ *{
+  background-color: yellow;
+}
+
+.ex9 div :nth-child(odd){
+  background-color: red;
+}
+
+.ex10 div:first-of-type :not(q){
+  background-color: red;
+}
+
+.ex11 [href]{
+  color: red;
+}
+
+.ex12 [href^="http"]{
+  color: red;
+}
+

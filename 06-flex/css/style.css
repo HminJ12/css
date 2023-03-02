@@ -1,0 +1,201 @@
+.ex1{
+  display: flex;
+  width: 500px;
+  height: 100px;
+  margin: 0 auto;
+  border: 1px solid red;
+}
+
+.ex1 div{
+  background: green;
+}
+.ex1 span{
+  background: pink;
+}
+
+.ex2{
+  display: flex;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  flex-direction: row;
+  border: 1px solid red;
+}
+.ex2 span{
+  background: yellow;
+}
+
+.ex3{
+  display: flex;
+  flex-direction: column-reverse;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  border: 1px solid red;
+}
+
+.ex3 span{
+  background: yellow;
+}
+
+.ex3 span:nth-child(1){
+  margin-left: 250px;
+}
+.ex3 span:nth-child(2){
+  margin-left: 200px;
+}
+.ex3 span:nth-child(3){
+  margin-left: 150px;
+}
+
+.ex4{
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  border: 1px solid blue;
+}
+
+.ex4 div{
+  background: yellow;
+}
+
+.ex5{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  border: 1px solid blue;
+}
+.ex5 div{
+  background-color: yellow;
+  margin-top: auto;
+}
+
+.ex5 div:nth-child(1){
+  height: 50px;
+}
+
+.ex5 div:nth-child(2){
+  height: 100px;
+}
+
+.ex5 div:nth-child(3){
+  height: 150px;
+  margin-left: 50px;
+}
+
+.ex6{
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-end;
+  justify-content: flex-end;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  border: 1px solid blue;
+}
+
+.ex6 div{
+  background: yellow;
+  border: 1px solid orange;
+}
+
+.ex6 div:nth-child(3){
+  margin-left: 50px;
+}
+
+.ex7{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  border: 1px solid blue;
+}
+
+.ex7 div{
+  background: yellow;
+  border: 1px solid orange;
+  margin: 0 5px;
+}
+
+/* 
+.ex7 div:nth-child(2){
+  margin: 0 10px;
+} 
+*/
+
+.ex8{
+  display: flex;
+  width: 500px;
+  margin: 0 auto;
+  border: 1px solid red;
+}
+
+.ex8 div{
+  flex: 1;
+  border: 1px solid blue;
+}
+
+.ex9{
+  display: flex;
+  /* flex-direction: row; 기본값임*/
+  justify-content: space-between;
+  /* align-items: stretch; 기본값임*/
+
+  width: 500px;
+  margin: 0 auto;
+  border: 1px solid red;
+}
+
+.ex9 > div{
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  border: 1px solid blue;
+}
+
+.ex9 h3{
+  background: yellow;
+}
+.ex9 p{
+  flex: 1;
+  background: yellowgreen;
+}
+
+.ex10{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 500px;
+  margin: 0 auto;
+  border: 1px solid red;
+}
+
+.ex10 div{
+  width: 33.33%;
+  box-sizing: border-box;
+  border: 1px solid blue;
+}
+
+.ex11{
+  width: 500px;
+  margin: 0 auto;
+  border: 1px solid red;
+}
+
+.ex11 > div{
+  display: inline-flex;
+  border: 1px solid blue;
+}
+.ex11 > div > div{
+  padding: 30px;
+  border: 1px solid yellow;
+}

@@ -1,0 +1,81 @@
+*{margin: 0;padding: 0;box-sizing: border-box;font-size: 16px;}
+body *{
+  padding: 10px;
+  border: 1px solid #CCC;
+}
+
+/* 이하부분 작성------------------------------ */
+
+.container1{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 1000px;
+  margin: 30px auto;
+}
+
+.container1 > div{
+  width: 20%;
+}
+
+.container1 > div > a{
+  display: block;
+}
+
+.container2{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 1000px;
+  margin: 30px auto;
+}
+
+.container2 > div{
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+  margin-bottom: 40px;
+}
+
+.container2 > div > p{
+  flex: 1;
+  margin: 10px 0;
+}
+
+.container2 > div:nth-child(2) ~ div{
+  margin-bottom: 0;
+}
+
+.container3{
+  display: flex;
+  justify-content: center;
+  width: 1000px;
+  margin: 30px auto;
+}
+
+.container3 > div{
+  width: 30%;
+  margin: 0 10px;
+}
+
+.container3 > div:first-child{
+  display: flex;
+  flex-direction: column;
+}
+
+.container3 > div:first-child p{
+  flex: 1;
+}
+
+.container3 > div:last-child > div a{
+  display: block;
+}
+
+.container3 > div p{
+  margin: 10px 0;
+}
+
+.container3 > div:last-child > div:first-child{
+  margin-bottom: 10px ;
+}
+

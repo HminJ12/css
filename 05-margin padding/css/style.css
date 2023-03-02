@@ -1,0 +1,87 @@
+.container1{
+  width: 500px;
+  margin: 30px auto;
+  background: gray;
+  padding:95px;
+  box-sizing: border-box;
+  border: 5px solid black;
+}
+
+.container1 div{
+  width: 100px;
+  height: 100px;
+  background: black;
+  color: white;
+}
+
+.container1 div:nth-child(2){
+  margin-left: 100px;
+}
+.container1 div:nth-child(3){
+  margin-left: 200px;
+}
+
+.container2{
+  width: 500px;
+  margin: 0 auto;
+  background: gray;
+  padding: 100px;
+  box-sizing: border-box;
+}
+.container2 > div{
+  background: black;
+}
+.container2 > div > div{
+  width: 100px;
+  height: 100px;
+  background: red;
+}
+.container2 > div > div:last-child{
+  margin: 100px 0 0 auto;
+}
+
+.container3{
+  border: 1px solid black;
+}
+.container3 div{
+  background: gray;
+  margin: 20px 0;
+}
+
+.container4{
+  border: 1px solid blue;
+}
+.container4 span{
+  display: inline-block;
+  width: 80%;
+  margin: 30px 0;
+  background: yellow;
+}
+
+.container5{
+  width: 670px;
+  background: black;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 30px;
+}
+.container5 > div{
+  width: 290px;
+  background: red;
+  box-sizing: border-box;
+  padding: 30px;
+}
+
+.container5 > div:nth-child(2){
+  margin: 30px 0 0 auto;
+}
+
+.container5 div div {
+  width: 100px;
+  height: 100px;
+  background: greenyellow;
+}
+
+.container5 div div:last-child{
+  margin: 30px 0 0 auto;
+}

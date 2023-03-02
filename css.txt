@@ -1,0 +1,794 @@
+CSS
+위아래가 존재한다 
+우선순위
+
+type은 태그의 다른 말이다.
+둘은 같은 말이다 웹에서
+타입은 곧 태그다.
+<head>
+  <style>
+    body{
+      /* font-size: 16px; */
+      color: gray;
+    }
+    h1{
+      color: red;
+    }
+    abbr{
+      color: blue;
+    }
+    h3{
+      color: green;
+    }
+    .style1{
+      color: pink;
+    }
+    #id1{
+      color: aqua;
+    }
+    .style{
+      font-family: '휴먼둥근헤드라인';
+      font-size: 30px;
+      font-weight: bold;
+      text-decoration: underline;
+      font-style: italic;
+      letter-spacing: 30px;
+      background-color:rgb(31, 27, 35
+      )
+
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <section>
+      <h1>
+        <abbr>CSS</abbr>
+        <small>Cascading Style Sheet</small>
+      </h1>
+      <p>우선순위와 상속이 존재하는 디자인 양식</p>
+    </section>
+    <hr>
+    <section>
+      <h2>type선택자(태그선택자)</h2>
+      <article>
+        <h3>사용법</h3>
+        <p>
+          태그명{속성:값} 형태로 선언 
+        </p>
+      </article>
+      <article>
+        <h3>특징</h3>
+        <ul>
+          <li>동일한 태그에 모두 적용됨</li>
+          <li>자식태그선택자가 우선순위가 높다</li>
+          <li>agent style과 겹칠 수 있다</li>
+        </ul>
+      </article>
+    </section>
+    <hr>
+
+    <section>
+      <h2>class 선택자</h2>
+      <article>
+        <h3 class="style1">사용법</h3>
+        <p>
+          .클래스명{속성:속성값;}을 이용해서 선언 후
+          class속성을 이용해서 호출
+        </p>
+      </article>
+
+      <article>
+        <h3 class="style1" id="id1">특징</h3>
+        <ul>
+          <li>타입선택자보자 우선순위가 높다</li>
+          <li>반복호출이 가능하다</li>
+          <li>수정관리가 용이하다</li>
+        </ul>
+      </article>
+
+    </section>
+    <hr>
+
+    <section>
+      <h2>id선택자</h2>
+      <article>
+        <h3>사용법</h3>
+        <p>
+          #아이디명{속성:속성값;} 선언 후,
+          id속성을 이용해서 호출
+        </p>
+      </article>
+      <article>
+        <h3>특징</h3>
+        <ul>
+          <li>클래스선택자보다 우선순위가 높음</li>
+          <li>반복호출이 허락되지 않으며, 수정관리가 어려움</li>
+          <li>html문법이나 프로그램용도로 사용</li>
+        </ul>
+      </article>
+    </section>
+    <hr>
+
+    <section>
+      <h2>inline 스타일</h2>
+      <article>
+        <h3 style="color:blueviolet;">사용법</h3>
+        <p>요소의 stlye속성을 지정 후 css를 작성</p>
+      </article>
+      <article>
+        <h3>특징</h3>
+        <ul>
+          <li>우선순위가 id보다 높음</li>
+          <li>스크립트를 이용해 css를 제어하는 데 사용</li>
+        </ul>
+      </article>
+    </section>
+    <hr>
+    <section>
+      <h2><span style="color:red;">c</span>ss의 특징</h2>
+      <ul>
+        <li>요소단위로 css가 적용됨</li>
+        <li>우선순위: 인라인스타일, id, class, 자식태그, 부모태그</li>
+        <li>글자정렬, 글자관련 스타일은 상속이 된다</li>
+      </ul>
+    </section>
+    <hr>
+    <section>
+      <h2>가상클래스</h2>
+      <p>css rule에서 정의된 클래스명</p>
+      <div class="box"></div>
+    </section>
+    <span class="style">span</span>
+  </main>  
+</body>
+
+
+섹션 안에 article 분할 시맨틱
+
+태그명{속성:값} css 문법
+agent stylesheet 브라우저가 기본적으로 정한 것
+
+상속 글자 색 상속이 된다. 
+글자 관련된 건 웬만한 건 다 상속이 된다.
+상속은 되는 속성이 있고 안 되는 속성이 있다.
+부모에서 자식으로만 상속된다.
+
+부모 선택자보다 자식 선택자 우선 순위가 더 높다.
+
+css에서 class은 그룹
+숫자가 먼저 나오면 안 된다.
+클래스명에 띄어쓰기가 나오면 안 된다.
+클래스는 반복 호출이 가능하다.
+수정관리가 용이하다
+
+선언 - 만든다
+호출 - 사용한다
+
+id는 학번으로 생각
+id는 반복해서 사용할 수 없다.
+수정관리가 힘들다.
+html 기능상 써야 할 때가 있다.
+코딩의 필요성 때문에 사용한다.
+샵 #이 붙는다.
+
+인라인 스타일은 자바스크립트로 css를 변경할 때 사용된다.
+자바스크립트는 인라인 스타일로 css로 
+
+
+span 의미가 없다는 태그
+css사용하려면 요소로 반드시 만들어야 함.
+
+자간 letter-spacing
+한글 쓸 때 ''따옴표 해주기
+
+가상클래스
+.box: 콜론이 붙으면 콜론 뒤로 가상클래스라고 함.
+마우스가 엘리먼트... 
+만들어진 클래스
+특정한 선택자들을 찾고 싶을 때 사용함
+
+
+    <div class="ex">
+      <small>small</small>
+      <b>bold</b>
+      <span>span</span>
+      <em>em</em>
+      <i>italic</i>
+    </div>
+
+   .ex  *:hover {
+      color: red;
+    }
+
+----------------------------
+선택자의 조합
+div 레이아웃 만들 때 아무 의미 없는 박스
+조직 이름 class
+독립적인 이름 id
+
+다중호출은 여백주고 class나 id 이름을 써 준다. 
+span 
+
+<head>
+  <style>
+    div.style1{
+      color: red;
+    }
+    .style2{
+      text-decoration: underline;
+    }
+    .style1{
+      color: blue;
+    }
+  </style>
+</head>
+
+css 마지막으로 코딩 쓴 게 우선순위가 높다.
+
+<body>
+  <main>
+    <h1>선택자의 조합</h1>
+    <ul>
+      <li>클래스나 아이디를 호출시 여백을 이용해서 다수의 클래스명을 연결,
+        id는 한개만 지정 가능</li>
+      <li>combine선택자 : 여러선택자를 연결하는 방식</li>
+      <li>
+        쉼표조합선택자 : 
+        쉼표를 이용해서 다수의 선택자를 연결
+      </li>
+      <li>
+        자손(decendent)선택자 :
+        여백을 이용한 선택자
+      </li>
+      <li>
+        자식(children)선택자 :
+        &gt;기호를 이용한 선택자
+      </li>
+      <li>
+        전체(universal)선택자 : * 전부 다
+      </li>
+    </ul>
+
+    <hr>
+    <div class="style1">style1</div>
+    <div class="style2">style2</div>
+    <div class="style1 style2">style1,style2</div>
+    <span class="style1">span</span>
+  </main>
+</body>
+</html>
+
+div#id1.style1
+div.style1{
+      color: red;
+    }
+div(태그명)이면서 style1이다.
+연결 선택자가 우선순위가 더 높아진다.
+컴바인, combine 선택자
+연결선택자에서 태그(태그명, 타입)는 무조건 앞에 와야 한다.
+
+span.style1{
+      color: blue;
+    }
+
+    .style1.style2{
+      text-decoration: underline;
+    }  
+style1이면서 style2인 것(순서 상관 없음)
+
+크기는 단위가 필요함
+넓이 width 
+높이 height
+
+.box1, .box2{
+      width: 300px; 
+      height: 300px;
+      background-color: red;
+    }
+.box1 그리고 .box2
+css 연결할 때 사용하는 쉼표
+div.box1, .box2
+
+
+
+    .box1 div{
+      width: 200px;
+      height: 200px;
+      background-color: blue;
+    }
+box1 안에 div인 것.
+
+
+* 전부 다 찾을 때 사용함
+
+하나를 수정할 때 다 수정이 되도록 사용하기 위해
+
+html, css에는 엔터는 띄어쓰기 (쉼표 붙을 때만 사용하기)
+
+호출할 때 쓰는 띄어쓰기는 : 그리고의 의미. css의 ,쉼표와 같은 의미이다.
+선택자를 선언할 때 쓰는 띄어쓰기는 : 안에라는 의미.
+
+
+
+    .box1 > div, 
+    .box2 > div{
+      width: 200px;
+      height: 200px;
+      background-color: blue;
+    }
+> 자식 찾을 때 사용함
+
+    .box1>div>div,
+    .box2>div>div{
+      width: 100px;
+      height: 100px;
+      background-color: black;
+    }
+
+----------------------------
+<link rel="stylesheet" href="./style.css">
+외부 스타일 연결할 때 link 사용
+
+릴레이션십 rel
+컴바인선택자가 연결선택자
+
+
+.ex1 div span.style{
+  color: red;
+}
+
+    <article class="ex1">
+      <h1>자손선택자와 컴바인선택자</h1>
+      <p>첫번째 span글자를 빨갛게</p>
+      <div>
+        <span class="style">span</span>
+        <span>span</span>
+      </div>
+      <span class="style">span</span>
+      <div>
+        <small class="style">small</small>
+      </div>
+    </article>
+
+.ex2 * * {
+ color: red;
+}
+
+
+adjacent 인접한 + 
+general 일반적인 ~ 동생들 
+
+
+<article class="ex3">
+      <h3>general siblings</h3>
+      <p>~, 뒷쪽 형제요소 전체를 선택</p>
+      <p>3. 1,2,3을 빨갛게</p>
+      <div>
+        <i>1</i>
+        <u>2</u>
+        <b>3</b>
+      </div>
+      <div>
+        <i>4</i>
+        <u>5</u>
+        <b>6</b>
+      </div>
+    </article>
+
+.ex3 div ~ div *{
+  color: red;
+} 
+4,5,6 선택
+
+.ex3 p + div * {
+  color: red;
+}
+1,2,3을 빨갛게
+
+:first-child
+첫번째 자식 
+ex) *:first-child
+
+child가 종족을 안 가리고 따진다. 남녀통합해서  
+of-type 같은 애들끼리 따진다. 남자 따로 여자 따로 
+
+
+    <article class="ex4">
+      <p>4. 1,4을 빨갛게(first-child)</p>
+      <div>
+        <i>1</i>
+        <u>2</u>
+        <b>3</b>
+      </div>
+      <div>
+        <q>4</q>
+        <u>5</u>
+        <b>6</b>
+      </div>
+    </article>
+
+.ex4 div *:first-child{
+  color: red;
+}
+
+가상클래스에서만 앞에서 * 생략 가능!!
+
+:last-child 마지막 애들 막내
+:last-of-type 
+
+
+
+.ex5 p~div:last-child{
+  color: red;
+}
+
+    <article class="ex5">
+      <p>5. 4,5,6을 빨갛게</p>
+      <div>
+        <div><i>1</i></div>
+        <div><u>2</u></div>
+        <div><b>3</b></div>
+      </div>
+      <div>
+        <div><i>4</i></div>
+        <div><u>5</u></div>
+        <div><b>6</b></div>
+      </div>
+    </article>
+
+css dinner - css 연습할 수 있는 사이트 
+
+
+----------------------------
+
+:nth-child(숫자)
+nth 몇 번째 무조건 괄호 사용해야 함
+ex) plate:nth-child(3)
+
+.ex6 div:nth-child(3) *{
+  background-color: red;
+}
+
+child 모두 혼성 전부 다 포함 
+
+뒤로부터 몇 번째
+:nth-last-child()
+
+.ex8 div :nth-last-child(4) ~ *{
+  background-color: yellow;
+}
+ex8 안에 div에 있는 4번째 자식 뒤로부터 전부 다
+
+
+짝수 even
+홀수 odd
+
+:not()
+얘만 빼고 전부 다
+
+:not() 괄호안에 가상 클래스 적을 수 없다
+
+.ex10 div:nth-of-type(1) 
+ex10안에 div에 
+
+attribute 속성
+
+속성을 이용하겠다
+[attribute]
+
+이 속성을 갖고 있는 애들 다 골라라.
+*[for]
+*생략가능
+
+[attribute="value"]
+특정 속성과 반드시 value이 값과 일치하는 애
+
+[attribute^="value"]
+^이 단어로 시작되는 말
+
+[attribute$="value"]
+$ 속성값이 끝나는 거
+
+[attribute*="value"]
+*포함이 돼 있는 거
+
+:nth-of-type(An+B)
+n = 숫자 
+영원한 등차수열로 선택
+
+:nth-child(An+B)
+
+An+B
+=등차n+시작번호
+이렇게 외우기
+
+----------------------------
+파일 만들 때 한글이나 띄어쓰기 사용하지 말 것
+css가 복잡한 이유
+ 전에 했던 걸 유지하면서 새로운 기능이 추가됐기 때문에...
+
+css 부트스트랩
+자유도 떨어짐.
+모양을 바꾸려고 할 때는 쓰기 어려움.
+기본 문법 완벽히 이해해야 함.
+
+display level
+출력 방식, 반드시 구분해야 한다!
+
+1.block level
+ 기본적으로 한 줄을 통째로 차지하는 애들
+100% 부모 기준
+옆에 아무도 못 옴. 혼자 산다.
+width, height 적용됨, 크기를 가질 수 있다.
+main
+
+2.inline level
+ 한줄로 출력 
+크기라는 요소의 개념이 적용 안 됨(크기 안 됨)
+
+
+3.inline-block
+ 한줄로 출력되는 요소
+크기속성이 적용됨
+ input
+ button
+
+inline-block의 해당 요소 암기하기(확실히 알기!)
+
+mdn 공식문서에 가서 찾기
+
+인라인 레벨 안에 블럭 레벨 사용 불가(문법)
+
+폼요소들은 다 인라인-블럭이다.
+이미지, 동영상 
+
+<img, input, select, textarea, button, iframe, svg, video>
+꼭 외우기!
+
+와이어프레임
+박스 구조를 봐야 한다.
+인라인, 인라인-블럭은 박스당 1글자로 본다.
+
+vertical-align: middle;
+수직 정렬
+인라인 레벨일 때 사용
+
+행간
+line-height: ;
+행간을 엘리먼트와 동일한 높이를 주면 가운데 정렬이 된다.
+한줄일 때 사용가능
+글자를 위 아래로 
+
+글자는 부모가 옮겨준다.
+블럭레벨은 자기가 움직인다.
+margin 간격
+margin-left:auto;
+오른쪽으로 간다.
+margin:auto; 
+왼쪽으로 간다. 기본값
+
+margin:0 0;
+
+margin-left:auto;
+margin-right:auto;
+둘 다 적으면 중앙정렬
+
+margin:0 auto;
+중앙정렬
+
+----------------------------
+인라인, 인라인-블럭 레벨은 한칸 띄어쓰기 된다.(여백현상)
+글자 여백 때문에 정확한 레이아웃이 안 나온다.
+내 마음대로 간격 조절이 어려움
+
+높이를 지정 안 해야 할 때가 많다.
+알아서 늘어나고 줄어들게 하기 위해 높이는 지정하지 않는다.
+
+넓이는 부모로부터 계산하는 게 편하다. 
+
+높이는 안쪽에서 바깥쪽으로 계산
+
+안쪽여백을 패딩
+바깥쪽 거리 마진
+
+block 레벨은 마진 상하가 형제들 개념
+첫번째는 top이 안 되고 
+마지막은 bottom이 안 된다.
+부모 객체에 패딩이나 테두리가 있으면 그 원칙이 깨진다.
+
+box-sizing: border-box;
+객체 안쪽으로 패딩과 보더가 적용된다.
+
+block레벨일 때만  margin의 겹침
+
+인라인 레벨은 margin, padding 위 아래 적용이 안 된다.
+
+정확한 레이아웃을 만들려면 블럭 레벨이랑..
+
+
+중앙이나 오른쪽끝으로 보낼 때는 auto가 사용하기 편하다.
+
+
+----------------------------
+플랙스 - 레이아웃을 배치하는 css
+박스를 배치하는 요령
+그리드 시스템
+포지션
+
+flex - css3에 나온 새로운 기능
+웹사이트 만들 때 필요
+유연하다, 다양한
+
+flex는 부모한테 적용한다.
+
+display: flex;
+블럭레벨과 같다.
+자식들은 flex 안의 자식 (블럭, 인라인, 인라인-블럭이 아니다)
+
+확실한 속성 알고 적기
+
+flex-direction: row;
+기본값(디폴트)
+
+column
+
+flex-direction: column;
+
+reverse
+거꾸로 순서가 바뀐다.
+위치와 순서가 바뀐다.
+
+flex-direction이 축 row
+부모의 높이와 동일하게 변한다. 높이를 지정이 안 된 경우
+
+flex-direction이 축 column
+부모의 넓이와 동일하게 변한다. 넓이를 지정이 안 된 경우
+
+
+
+동일하다 =  스트레칭 된다.
+
+----------------------------
+테스트 코딩 해야 함.
+암기 필요.
+
+span{$}*3
+
+margin을 주면 넓이가 변한다.(넓이를 지정하지 않았을 경우)
+
+justify-content - 자식요소 위치 바꾸는 거
+
+flex-start - 위
+center - 중앙
+flex-end - 아래
+space-between : 분할
+
+
+----------------------------
+auto 좌우 정렬만 됨.(수직 적용 안 됨.)
+flex안에서는 상하, 좌우 다 사용 가능.
+
+align-items
+1.축의 위치를 바꾸는 거
+2.객체 높이를 없애는 기능(원래대로)
+
+align-items: stretch;
+기본값, 디폴트값
+
+display: flex; 안에서 못 벗어남
+flex 속성 -넓이를 결정. 알아서 넓이를 가져가라.
+flex속성이 들어가면 따로 넓이가 적용 안 됨
+남는 넓이를 가진다.
+
+flex : none; 을 적용하면 크기를 지정할 수 있다.
+
+flex-wrap: wrap;
+여러 축 사용
+nowrap,wrap
+
+inline-flex
+부모에게 넓이나 높이를 주면 안 된다.
+
+
+overflow: scroll;
+
+----------------------------
+문법과 css는 별개이다!
+
+flex 내 자식들의 레이아웃 속성을 바꾼다.
+
+display: inline-flex;
+부모의 넓이가 사라짐.
+자식의 넓이에 따라서 부모의 넓이가 바뀌는 거.
+인라인은 옆이 한줄.(옆으로 배치할 때만 사용함)
+부모에게 크기를 주면 안 됨.
+
+row, row-reverse 높이가 같아짐
+column, column-reverse 넓이가 같아짐
+
+
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: center;
+
+축의 방향과 위치를 먼저 정하고 자식요소의 위치를 바꾼다.
+
+flex 속성
+남는 넓이,높이를 알아서 가져라
+축이 column 높이를 알아서 가져라(높이 못 줌)
+축이 row일 때는 넓이를 알아서 가져라(넓이 못 줌)
+
+같은 값을 주면 니들끼리 알아서 가져라.
+
+----------------------------
+float속성
+
+레이아웃을 크게 박스 형태로 그리드 레이아웃
+옆쪽으로 배치 -그리드 레이아웃이라고 함
+요즘은 flex 레이아웃을 사용함.
+이전에는 float을 사용함. float이 사용하기 편한 레이아웃이 있다.
+
+그리드
+website grid design 검색해보기
+
+flex는 높이가 동일할 때 사용(가장 많이 사용됨, 단순한 거)
+높이가 다를 때 float(다른 레이아웃과 합쳐서 높이가 딱 떨어질 때, 구멍이 뚫려 있을 때), grid
+더 복잡한 넓이 높이가 섞여 있으면 grid
+
+ul, li 사용함 
+비슷한 내용을 만들 때
+
+높이가 다른 격자를 쓸 때 사용 float, grid
+높이, 넓이 다르면 grid
+더하기,빼기가 나와야 한다.
+
+ul,li는 만들 때부터 마진하고 패딩이 다 적용되어 있다.(agent style)
+
+
+float은 둘 다 줘야 한다.
+자식한테 준다.
+무조건 수평배치가 목적이다.
+float : left;
+left 
+right
+
+자식에게 float이 적용되면 부모의 높이가 없어진다.
+부모가 알아서 늘어나야 한다.
+clearfix
+
+float 형제들과 나란히 서겠다.
+clear는 관계를 끊겠다. clear: both;
+
+clear: both;가 되면 부모가 높이를 인식한다.
+가장 마지막에 clear 속성을 사용해야 함.
+
+.container1::after{
+  content: ""; 
+}
+
+/* clearfix */
+.container1::after{
+  content: "";
+  display: block;
+  clear: both;
+->이 방법을 clearfix라고 한다.
+표준 방법임.
+
+:: 가상 요소, 인라인 레벨이라서 clear: both;가 불가능 
+그래서 display를 block으로 바꿔줌
+content: ""; -> 내용이 없는 엘리먼트를 만들겠다.
+
+overflow: auto;
+scroll바 만드는 목적으로 사용하는 것임.
+float과 충돌이 생겨서 잘 사용 안 함.
+
+<pre>글자로 인식함 br 쓰기 싫을 때 html 문법
+
+float이 적용되면 더 이상 block레벨은 block이 아니다.
+
+clear는 위쪽과 관련
+float은 내 아래쪽과 관련
+둘다 사용 가능
+

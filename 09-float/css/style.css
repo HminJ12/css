@@ -1,0 +1,118 @@
+ul,li{
+  margin: 0;
+  padding: 0;
+}
+li{
+  list-style: none;
+}
+.container1{
+  width: 980px;
+  margin: 30px auto;
+  padding-top: 20px;
+  border: 1px solid black;
+  /* overflow: auto; */
+}
+
+/* clearfix */
+.container1::after{
+  content: "";
+  display: block;
+  clear: both;
+}
+.container1 li{
+  margin-left: 20px;
+  margin-bottom: 20px;
+  height: 300px;
+  background: #CCC;
+}
+
+.container1 .box{
+  width: 300px;
+}
+.container1 .wbox{
+  width: 460px;
+}
+.container1 .box1, 
+.container1 .box2,
+.container1 .box3,
+.container1 .box4,
+.container1 .box5,
+.container1 .box6,
+.container1 .box8,
+.container1 .box9{
+  float : left;
+}
+/* box6은 자리가 없기 때문에 clear할 필요 없음 */
+
+.container1 .box3{
+  clear: both;
+}
+.container1 .box7{
+  float : right;
+  margin-right: 20px;
+}
+
+/* 1. 부모요소(ul) 크기를 준다
+위에 여백을 주려고 부모요소에게 padding-top을 준다 */
+.container2{
+  width: 980px;
+  margin: 30px auto;
+  padding-top: 20px;
+  border: 1px solid black;
+}
+/* 2. 자식요소(li)에 크기를 준다 
+넓이는 같고 높이가 다르기 때문에 
+class명을 바꾸서 넣어준다
+margin-left와 margin-bottom은 다 들어가서
+자식요소인 li에 넣는다*/
+.container2 li{
+  margin-left: 20px;
+  margin-bottom: 20px;
+  width: 300px;
+  background: #ccc;
+}
+
+/* 3.가상요소를 만들어서 부모요소가 높이를 
+인식할 수 있도록 해준다*/
+/* clearfix */
+.container2::after{
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* 2-1. 높이가 다른 크기의 li는 class명을 줘 바꾼다 */
+.container2 .wbox{
+  height: 620px;
+}
+
+/* 2-2. 높이가 다른 크기의 li는 class명을 줘 바꾼다 */
+.container2 .box{
+  height: 300px;
+}
+
+/* 4. li float을 한다 */
+.container2 .box1,
+.container2 .box2,
+.container2 .box3,
+.container2 .box4{
+  float: left;
+}
+
+
+/* 이름이 div5인 li는 clear:both;와 margin-right와 
+float:right를 해준다 */
+.container2 .box5{
+  clear: both;
+  margin-right: 20px;
+}
+
+.container2 .box5,
+.container2 .box6,
+.container2 .box7,
+.container2 .box8{
+  float: right;
+}
+/* 이름이 div4, div8은 부모요소 넓이에 
+자리가 없어서 알아서 밑으로 내려간다 
+clear:both;를 할 필요가 없다*/
