@@ -791,4 +791,82 @@ float이 적용되면 더 이상 block레벨은 block이 아니다.
 clear는 위쪽과 관련
 float은 내 아래쪽과 관련
 둘다 사용 가능
+부모는 clearfix 해준다.
+
+----------------------------
+float은 높이가 중요하다. (높이가 다를 때 사용)
+넓이, 높이가 다 다르면 grid 사용
+grid는 제약이 심하다.
+자유로운 레이아웃 만들기 힘들다
+
+grid 레이아웃 만드는 방법
+내가 원하는 바둑판을 만든다.(격자)
+규격에 맞게 원하는 박스를 만든다
+무조건 사각형만 나온다
+
+장점 - 박스 순서까지 마음대로 배치 가능 
+
+
+grid는 부모한테 해준다.
+
+col 칸
+row 줄
+
+
+.container1{
+  display: grid; /* 바둑판 되겠다 선언 */
+  grid-template-columns: 100px 100px 100px;
+  grid-template-rows: 100px 100px 100px;
+  width: 300px;
+  margin: 30px auto;
+  border: 1px solid black;
+}
+
+grid-template-columns: 100px 100px 100px;
+width: 300px;
+넓이는 맞춰야 한다.
+
+grid-template-columns: auto auto auto;
+grid-template-columns: 1fr 1fr 1fr;
+
+auto -   
+1fr - flex 계산식과 유사함
+
+grid-template-columns: repeat(3,auto);
+=grid-template-columns: auto auto auto; 같은 의미이다
+
+
+grid-template-rows: repeat(3,1fr);
+=grid-template-rows: 100px 100px 100px; 같은 의미이다
+
+
+표현방식 3가지 정도 됨 (table과 동일한 구조)
+
+grid-row: 1/2;
+1번째 줄에서 2번째 줄 이전에 끝난다.
+뉴머릭?으로 구분
+
+grid-column: 1/span 2;
+span -합치다의 뜻
+1번째 줄에서 2번째 줄에 끝난다.
+
+본인이 편한 방식으로 사용하면 됨
+
+
+grid-area: 3줄 시작/칸 시작/4줄 끝/칸 끝; 
+row 먼저 적음  
+
+
+컨테이너 안에 넣는다
+gap: 10px; 
+안쪽 여백을 줄 수 있다
+
+writing-mode: sideways-rl;
+
+writing-mode: vertical-lr;
+세로로 쓸 때 글자를
+
+text-orientation: upright;
+세로에서 abc 글자를 똑바로 세울 때 사용
+
 
