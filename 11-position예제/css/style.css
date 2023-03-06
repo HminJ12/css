@@ -1,0 +1,36 @@
+.box{
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  width: 300px;
+  height: 300px;
+}
+
+.box1{
+  background: red;
+  right: 50%;
+  bottom: 50%;
+}
+
+.box2{
+  left: calc(50% - 150px);
+  top: calc(50% - 150px);
+  background: cyan;
+}
+
+.box3{
+  left: 50%;
+  top: 50%;
+  background: blue;
+}
+
+.box div{
+  width: 100px;
+  height: 100px;
+  background: yellow;
+}
+
+.box div:first-child{
+  margin-top: auto; /* margin-top은 auto가 없다! 
+  flex 안에서만 사용 가능하다 */
+}
