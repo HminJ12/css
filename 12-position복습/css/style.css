@@ -1,0 +1,84 @@
+html{
+  scroll-behavior: smooth;
+}
+
+header{
+  position: fixed; /* 메뉴 고정할 때 사용 */
+  left: 0;
+  top: 0;
+  width: 100%;
+  background: greenyellow;
+}
+
+.section1{
+  background: gray;
+}
+.section2{
+  background: rgb(219, 177, 177);
+}
+.section3{
+  background: rgb(154, 178, 199);
+}
+
+
+
+.ex1{
+  
+  width: 500px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 50px;
+  font-weight: bold;
+  border: 1px solid black;
+}
+
+.ex1 div{
+  position: relative;
+  display: inline-block;
+  background: gray;
+}
+
+.ex1 div .red{ 
+  position: absolute;
+  left: 0;
+  height: 50%;
+  overflow: hidden;
+  color: red;
+}
+/* 
+position이 적용된 것은 text-align이 적용 안 된다
+position(absoulte, fixed)은 무조건 좌표로 움직인다
+relative 제외
+*/
+
+.ex2{
+  display: flex;
+  width: 900px;
+  border: 1px solid black;
+  margin: 30px auto;
+}
+.ex2 div{
+  position: relative;
+  flex: 1;
+  margin: 20px;
+  height: 100px;
+  background: yellow;
+}
+
+.ex2 div::before{
+  content: '';
+  position: absolute;
+  top: -15px;
+  left: calc(50% - 15px);
+/*   display: inline-block; */ 
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: yellow;
+}/* 가상 엘리먼트 6개 div 앞쪽에 
+content: '';를 꼭 넣어줘야 가상 엘리먼트가 생긴다
+가상 엘리먼트 인라인 레벨이다 
+position을 주면 display는 
+block, inline, inline-block을 사용하면 안 된다!!
+display flex는 자식요소한테 사용하는 거라 사용 가능하다*/
+

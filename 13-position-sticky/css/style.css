@@ -1,0 +1,73 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+}
+
+body{
+  padding-top: 50px;
+} /* 벽을 만들어줘야 한다 */
+
+h1{
+  z-index: 2; /* 앞뒤, 0층기준이다 */
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  background: black;
+  color: white;
+} /* 고정된 인삿말 */
+
+section{
+  position: relative;
+  z-index: 1;
+  padding: 10px;
+  box-sizing: border-box;
+  width: 80%;
+  margin: 50px auto;
+  border: 1px solid red;
+}
+
+article{
+  border: 1px solid blue;
+  margin: 10px 0;
+}
+
+h2{
+  position: sticky; /* 들러붙는다 */
+  z-index: 10; /* z-index는 부모가 있으면 자식들은 그 안에서 높이를 다툰다, 그룹화해야 한다 */
+  top: 50px; /* 브라우저 기준 특정 시점으로 고정하고 싶을 때 시작점 */
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  background: #666;
+  color: white;
+}
+
+h3{
+  position: sticky;
+  top: 90px;
+  height: 30px;
+  background: #CCC;
+  text-align: center;
+  line-height: 30px;
+}
+
+.section0{
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.sidebar{
+  position: sticky;
+  top: 50px;
+  width: 30%;
+  background: yellow;
+}
+.content{
+  width: 65%;
+  background: yellowgreen;
+}
