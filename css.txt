@@ -980,4 +980,38 @@ relative에서 특정시점에 fixed로 변경
 
 position 사용하면 z-index가 생긴다
 
+----------------------------
+transform
+현재 레이아웃에 영향을 안 주고 변형이 일어난다.
+화면에 출력 -> 랜더링
+랜더링에만 변화가 일어난다.
+
+비유를 착시...
+
+transform: scale(2); =>transform: scale(200%); 같은 말
+
+레이아웃에는 변화가 없는 상태에서 렌더링에 변화를 준다
+시각적으로 
+
+scale 커지는 거
+
+rotate 회전 
+왼쪽 - 
+오른쪽 + 
+
+translate(x,y) 위치변화
+translateX(좌우)수평
+translateY(상하)수직
+
+opacity: 0.5; /* 불투명도 100% = 1이다 */
+
+프로퍼티(속성) ->css에서 
+
+transition 전환 효과
+
+
+사용목적
+css 프로퍼티가 변하는 시간을 설정
+
+transition 지정하는 위치 중요
 

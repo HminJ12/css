@@ -1,0 +1,122 @@
+.ex1{
+  text-align: center;
+}
+
+.ex1 span{
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background: #CCC;
+  border: 1px solid black;
+  opacity: 0.5; /* 불투명도 100% = 1이다 0이 되면 안 보인다 
+  투명할 뿐이다(없어진 게 아님) display:none;과 다르다
+  */
+}
+
+.ex1 span:nth-child(2){
+  transform: scale(1.5) rotate(45deg) translate(0, 0);
+  
+   /* rotate는 단위가 붙어야 한다 deg 단위 
+  같은 말 사용 불가, 같이 사용하고 싶을 때 이어쓰기 가능하다
+  transform이 적용되면 z-index가 자동으로 생긴다 
+  */
+
+}
+
+.ex1 span:nth-child(3){
+  position: relative; 
+  z-index: 1;
+}
+/* z-index 사용하려고 포지션을 준다 */
+
+.ex2{
+  position: relative;
+  margin: 50px 0;
+  border: 1px solid black;
+}
+
+.ex2 div{
+  width: 50%; /* 부모기준 */
+  height: 50px; 
+  background: #CCC;
+}
+
+.ex2 span{
+  position: absolute;
+  top: 0;
+  left: 50%; /* 부모기준 */
+  background: red;
+  transform: translateX(-50%); /* 자기 기준, 기준점이 다르다 */
+}
+
+.ex3 span{
+  display: inline-block; /* 패딩 적용 때문에 */
+  padding: 20px; /* 상하 적용 불가 좌우만 가능 */
+  cursor: pointer;
+  opacity: 0.3;
+  background: #CCC;
+  transition: all .5s; 
+  /* 
+  할 수 있는 거 다 all
+  transition: opacity .5s;
+  opacity가 변할 때 0.5초 걸려라
+  미분이 가능한 나눌 수 있는 숫자만 가능하다
+   */
+}
+
+.ex3 span:hover{
+  opacity: 1;
+  background: red;
+  color: #FFF;
+}
+
+.ex4{
+  margin: 50px auto;
+  border: 1px solid black;
+}
+.ex4 div{
+  position: relative;
+  width: 50px;
+  height: 50px;
+  left: 0; /* 초기값이 없으면 기준점을 줘야 한다 */
+  transition: border-radius 0.5s, left 2s, transform 2s; /* all로 하면 안 된다 */
+  transition-delay: 2s, 0s, 0s ;
+  background: linear-gradient(red, blue)
+}
+
+.ex4 div.active{
+  text-align: center;
+  border-radius: 50%;
+  transition-delay: 0s, 0.5s, 0.5s ;
+  left: calc(100% - 50px);
+  transform: rotate(1000deg);
+  
+}
+
+.ex5{
+  text-align: center;
+  margin: 50px 0;
+  border: 1px solid black;
+}
+
+.ex5 div{
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background: blue;
+  color: #FFF;
+  line-height: 100px;
+  opacity: 0;
+  transition: all 1s;
+}
+
+.ex5:hover div{
+  opacity: 1;
+}
+/* 1번째 div는 바로 나타나서 delay따로 안줌 */
+.ex5:hover div:nth-child(2){
+  transition-delay: 0.5s;
+}
+.ex5:hover div:nth-child(3){
+  transition-delay: 1s;
+}
