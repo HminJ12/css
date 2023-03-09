@@ -1015,3 +1015,40 @@ css 프로퍼티가 변하는 시간을 설정
 
 transition 지정하는 위치 중요
 
+----------------------------
+transition
+시작점과 끝나는 지점 정해야 한다
+반복 불가, 복잡한 거 불가
+한번하고 끝
+
+카페24 디자인 센터
+
+animation
+반복적이고 복잡한 행동(무한 반복)
+
+animation, keyframes 
+같이 사용
+
+섞어 쓰면 안 됨
+left면 left로 계산해야 함
+
+모션 미리 세팅해야 함
+
+@keyframes
+동작 -> 애니메이션을 만들겠다.
+
+@keyframes move{
+  
+}
+move는 그냥 이름 내가 정하는 거
+
+시작은 0% 
+끝이 100%
+
+
+alternate;(animation 방향 토글
+
+자연스러운 걸 원할 때는 안 됨
+
+animation 중지됐을 경우 바로 초기화 -> transition과 가장  큰 차이점
+
