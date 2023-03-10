@@ -1,0 +1,79 @@
+body{
+  margin: 0;
+}
+
+.a{
+  width: 95%;
+  max-width: 800px;
+  height: 100px;
+  margin: 10px auto;
+  background: #CCC;
+}
+/* 넓이는 항상 max, minmum을 생각해라 */
+
+.container{
+  width: 95%;
+  max-width: 800px;
+  margin: 10px auto;
+  background: red;
+}
+
+
+
+.sidebar{
+  background: yellow;
+}
+
+.d{
+  height: 410px;
+  background: #CCC;
+}
+
+.b, .c{
+  height: 200px;
+  background-color: #CCC;
+}
+
+.e{
+  width: 95%;
+  max-width: 800px;
+  height: 100px;
+  margin: 10px auto;
+  background: #CCC;
+}
+
+@media screen and (min-width:1000px) {
+  .container{
+    display: flex;
+    justify-content: space-between;
+  }
+  .sidebar{
+    width: calc(25% - 10px);
+  }
+  .d{
+    width: 75%;
+  }
+  .sidebar .b{
+    margin-bottom: 10px;
+  }
+}
+/* 1000 이상 */
+
+@media screen and (max-width:1000px) {
+  .sidebar{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  .sidebar .b, .sidebar .c{
+    width: calc(50% - 5px);
+  }
+}
+/* 1000 이하일 때  */
+
+@media screen and (max-width:500px) {
+  .sidebar{
+    display: none;
+  }
+}
+/* 500 이하일 때 */
