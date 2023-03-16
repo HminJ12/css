@@ -1,0 +1,26 @@
+p{
+  margin: 10px 0;
+  border: 1px solid red;
+}
+a{
+  margin: 10px 0;
+  border: 1px solid red;
+}
+
+.container{
+  text-align: right;
+  background: yellow;
+}
+
+.box{
+  display: inline-block;
+  background: red;
+}
+
+div{
+  width : 1px;
+  padding : 1px;
+  border: 1px solid red;
+}
+ 
+
