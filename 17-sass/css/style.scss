@@ -1,0 +1,129 @@
+/* --------------------------- */
+// nested 선택자
+/* --------------------------- */
+.ex1, .ex2 {
+  > div {
+    width: 100px;
+    height: 100px;
+    background: red;
+    > div{
+      width: 70px;
+      height: 70px;
+      background: blue;
+      div{
+        width: 40px;
+        height: 40px;
+        background: greenyellow;
+      }
+    }
+  }
+}
+
+/* --------------------------- */
+// parent 선택자 (중괄호{} 선택자)
+/* --------------------------- */
+.ex3{
+  div{
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background: #000;
+    &:first-child:hover{
+      background: red;
+    }
+    &:last-child:hover{
+      background: greenyellow;
+    }
+    
+  }
+
+}
+
+/* --------------------------- */
+//  변수
+/* --------------------------- */
+.ex4{
+  $w1:100px;
+  $w2:200px;
+  $bg1:red;
+  $bg2:blue;
+
+  div{
+    display: inline-block;
+    height: 100px;
+    background: #000;
+    &:first-child{
+      width: $w1;
+      &:hover{
+        background: $bg1;
+      }
+    }
+    &:last-child{
+      width: $w2;
+      &:hover{
+        background: $bg2;
+      }
+    }
+  }
+}
+
+/* --------------------------- */
+//  import
+//  scss 변수를 외부파일에서 호출하기 위해서는 변수 호출 전 import가 선행되어야 함
+//  import 되는 scss파일에서는 일반css를 작성하면 import한 모든 파일에서 css코드가 중복된다
+//  여러 파일에서 공통으로 사용되는 변수는 import를 사용하지 말 것
+/* --------------------------- */
+@import './common'; //'./common.scss'; 같은 말이다
+$sub-color: pink;
+.ex5{
+  div{
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    &:first-child{
+      background: var(--main-color) //링크 걸어야 적용된다
+    }
+    &:last-child {
+      background: $sub-color;
+    } //변수는 링크로 연결이 안 된다! import 호출 후 사용 가능함
+  }
+}
+
+/* --------------------------- */
+//  보간법  
+/* --------------------------- */
+.ex6{
+  $w100: 100;
+  $b:box; //$b:'box';와 같다, 띄어쓰기할 때 반드시 따옴표 사용한다
+
+  div{
+    display: inline-block;
+    height: 100px;
+    &.#{$b}1{
+      width: #{$w100}px;
+      background: red;
+    }
+    &.#{$b}2{
+      width: #{$w100*2}px;
+      background: blue;
+    }
+  }
+}
+
+
+
+/* --------------------------- */
+//
+/* --------------------------- */
+
+
+
+/* --------------------------- */
+//
+/* --------------------------- */
+
+
+
+/* --------------------------- */
+//
+/* --------------------------- */

@@ -1,0 +1,88 @@
+/* --------------------------- */
+/* --------------------------- */
+.ex1 > div, .ex2 > div {
+  width: 100px;
+  height: 100px;
+  background: red;
+}
+.ex1 > div > div, .ex2 > div > div {
+  width: 70px;
+  height: 70px;
+  background: blue;
+}
+.ex1 > div > div div, .ex2 > div > div div {
+  width: 40px;
+  height: 40px;
+  background: greenyellow;
+}
+
+/* --------------------------- */
+/* --------------------------- */
+.ex3 div {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background: #000;
+}
+.ex3 div:first-child:hover {
+  background: red;
+}
+.ex3 div:last-child:hover {
+  background: greenyellow;
+}
+
+/* --------------------------- */
+/* --------------------------- */
+.ex4 div {
+  display: inline-block;
+  height: 100px;
+  background: #000;
+}
+.ex4 div:first-child {
+  width: 100px;
+}
+.ex4 div:first-child:hover {
+  background: red;
+}
+.ex4 div:last-child {
+  width: 200px;
+}
+.ex4 div:last-child:hover {
+  background: blue;
+}
+
+/* --------------------------- */
+/* --------------------------- */
+.ex5 div {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+}
+.ex5 div:first-child {
+  background: var(--main-color);
+}
+.ex5 div:last-child {
+  background: pink;
+}
+
+/* --------------------------- */
+/* --------------------------- */
+.ex6 div {
+  display: inline-block;
+  height: 100px;
+}
+.ex6 div.box1 {
+  width: 100px;
+  background: red;
+}
+.ex6 div.box2 {
+  width: 200px;
+  background: blue;
+}
+
+/* --------------------------- */
+/* --------------------------- */
+/* --------------------------- */
+/* --------------------------- */
+/* --------------------------- */
+/* --------------------------- *//*# sourceMappingURL=style.css.map */

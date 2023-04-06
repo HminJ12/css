@@ -1,0 +1,165 @@
+sass
+css 전처리기
+css파일을 스크립트 문법으로 쓴다.
+
+sass -> scss
+sass문법
+사스라고 읽는다. 
+
+
+설치방법 extensions
+
+Live Server
+Live Sass Compiler
+SCSS Formatter
+
+vscode에서 setting들어가서 setting.json 아이콘 누르기
+setting.json파일 추가
+"liveSassCompile.settings.autoprefix": null
+----------------------------------------------------
+
+Watch sass 누르고 시작하기!
+
+연결은 .css를 연결하고
+쓰는 건 scss에서 작성한다.
+
+.css.map이 있는 이유는 오류검사를 하기 위해 생김
+브라우저에서 검사할 때 사용해서 있어야 한다!
+
+나중에 호스팅 업로드할 때는 없어도 된다
+
+주석이 2개가 있다.
+여기서는 // 주석 사용 가능하다
+
+
+----------------------------------------------------
+json파일에 붙여넣기 하기 (사스 글자크기 줄이는 거)
+ "[Log]": {
+
+     "editor.fontSize": 18
+
+ },
+
+----------------------------------------------------
+scss 사용 방법
+
+.ex1, .ex2 {
+  > div {
+    width: 100px;
+    height: 100px;
+    background: red;
+    > div{
+      width: 70px;
+      height: 70px;
+      background: blue;
+      div{
+        width: 40px;
+        height: 40px;
+        background: greenyellow;
+      }
+    }
+  }
+}
+이런 식으로 사용 가능하다!
+
+css보다 선택자 수도 줄어들고 수정관리가 용이하다!
+가독성이 훨씬 좋다!
+
+& -> 우리 {}중괄호의 선택자를 말한다
+부모선택자
+
+.ex3{
+  div{
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background: #000;
+    &:first-child:hover{
+      background: red;
+    }
+    &:last-child:hover{
+      background: greenyellow;
+    }
+    
+  }
+
+}
+
+변수 선언
+$w:100px;
+$ 변수를 사용하겠다.
+
+
+변수를 쓸 수 있다
+변수를 선언 후, 사용할 수 있다
+
+똑같이 스코프 범위가 있다.
+
+변수 선언 ex
+  $w1:100px;
+  $w2:200px;
+  $bg1:red;
+  $bg2:blue;
+
+변수 호출, 사용 ex
+
+  div{
+    display: inline-block;
+    height: 100px;
+    background: #000;
+    &:first-child{
+      width: $w1;
+      &:hover{
+        background: $bg1;
+      }
+    }
+    
+    &:last-child{
+      width: $w2;
+      &:hover{
+        background: $bg2;
+      }
+    }
+
+  }
+}
+
+
+import
+여러 군데에서 사용하는 경우
+공통으로 사용되는 파일을 만들 때 사용함
+
+외부파일에서 변수를 가져오려면 import가 선행되어야 함
+파일 상단에서 호출한다!
+
+@import './common'; //'./common.scss'; 같은 말이다
+
+변수 호출 전에 사용하려면 사용 못함
+그래서 최상단에 호출해야 한다!
+
+주의사항
+import 할 때는 일반css를 사용하면 안 된다.
+같이 중복되기 때문에
+공통 scss에서는 scss문법만 사용하도록 한다!
+
+자주 바뀌는 변수는 import를 해서는 안 된다
+해당 파일에서 만들 것
+scss변수는 값을 바꾸고 css, scss 다시 저장해야 나오기 때문에 번거롭다
+
+//  :root은 html과 같은 말, 일반 css
+
+$sub-color:blue; //변수를 만듦, scss
+
+변수는 파일 내에서 선언하는 게 좋다.
+common.scss에 사용하지 않는 게 좋다
+import하지 말아라..
+
+
+보간법
+$w100: 100;
+height: #{$w100}px;
+
+#{$w100} ->변수
+
+
+
