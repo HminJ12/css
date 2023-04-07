@@ -110,20 +110,99 @@ $sub-color: pink;
   }
 }
 
-
-
-/* --------------------------- */
-//
-/* --------------------------- */
-
-
-
-/* --------------------------- */
-//
-/* --------------------------- */
-
-
+.ex7{
+  width: 500px;
+  height: 100px;
+  border: 1px solid green;
+  @media #{$min-lg} {
+    background: red;
+  }
+  @media #{$max-lg} {
+    background: blue;
+  }
+}
 
 /* --------------------------- */
-//
+//  @mixin 함수, @include 함수 호출
 /* --------------------------- */
+.ex8{
+  button{
+    @include btn;
+
+  }
+}
+.ex9{
+  button{
+    &:nth-child(1){
+      @include btn-hover(red);
+    }
+    &:nth-child(2){
+      @include btn-hover(blue);
+    }
+    &:nth-child(3){
+      @include btn-hover(green);
+    }
+    
+  }
+}
+
+.ex10{
+  a{
+    &:nth-child(even){
+      @include icon(before,"\f015");
+    }
+    &:nth-child(odd){
+      @include icon(before,"\f002");
+    }
+  }
+}
+
+/* --------------------------- */
+//  반복문
+/* --------------------------- */
+.ex11 div{
+  display: inline-block;
+  height: 100px;
+  background: yellow;
+  @for $i from 1 through 3{
+    &:nth-child(#{$i}){
+      width: #{$i*100}px; //보간하는 습관을 들여라
+    } //div nth-child 1부터 3까지 선택함
+  }
+}
+
+.ex12{
+  font-size: 0;
+  b{
+    display: inline-block;
+    font-size: 16px;
+    animation: jump 0.5s infinite alternate;
+    @for $i from 1 through 6{
+      &:nth-child(#{$i}){
+        animation-delay: #{($i - 1)*0.2}s;
+      } //연산자는 띄어써야 한다
+    }
+  }
+  @keyframes jump{
+    0%{transform:translateY(0)}
+    100%{transform:translateY(-10px)}
+  }
+}
+
+.ex12-1{
+  font-size: 0;
+  b{
+    display: inline-block;
+    font-size: 16px;
+    animation: jump 0.5s infinite alternate;
+    @for $i from 1 through 25{
+      &:nth-child(#{$i}){
+        animation-delay: #{($i - 1)*0.2}s;
+      } //연산자는 띄어써야 한다
+    }
+  }
+  @keyframes jump{
+    0%{transform:translateY(0)}
+    100%{transform:translateY(-10px)}
+  }
+}

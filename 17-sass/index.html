@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/reset.css">
   <link rel="stylesheet" href="./css/style.css">
+  <script src="https://kit.fontawesome.com/eef58f469c.js" crossorigin="anonymous"></script>
   <title>Document</title>
 </head>
 <body>
@@ -44,5 +45,58 @@
     <div class="box1"></div>
     <div class="box2"></div>
   </div>
+  <hr>
+  <div class="ex7">
+
+  </div>
+  <hr>
+  <div class="ex8">
+    <button>1</button>
+    <button>2</button>
+    <button>3</button>
+  </div>
+  <hr>
+  <div class="ex9">
+    <button>1</button>
+    <button>2</button>
+    <button>3</button>
+  </div>
+  <hr>
+  <div class="ex10">
+    <a href="#">1</a>
+    <a href="#">2</a>
+    <a href="#">3</a>
+  </div>
+  <hr>
+  <div class="ex11">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+  </div>
+  <hr>
+  <div class="ex12">
+    <b>안</b>
+    <b>녕</b>
+    <b>&nbsp;</b> <!-- 여백 넣을 때 -->
+    <b>하</b>
+    <b>세</b>
+    <b>요</b>
+  </div>
+  <hr>
+  <div class="ex12-1">
+    안녕 하세요. 반갑습니다. 저는 홍길동입니다.
+  </div>
+  <script src="https://code.jquery.com/jquery-latest.js"></script>
+  <script>
+    var str = $(`.ex12-1`).text().trim()
+    var strArr = str.split('')
+    console.log(strArr);
+    $(`.ex12-1`).empty()
+    strArr.forEach(v=>{
+      var char = (v === ' ')? '&nbsp;': v
+      $(`.ex12-1`).append(`<b>${char}</b>`)
+    })
+  </script>
+  <br><br><br><br><br><br><br><br><br><br>
 </body>
 </html>

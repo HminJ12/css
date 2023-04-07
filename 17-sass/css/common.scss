@@ -1,1 +1,29 @@
+$min-lg : "screen and (min-width:1000px)";
+$max-lg : "screen and (max-width:1000px)";
 
+@mixin btn{
+  border :1px solid #CCC;
+  padding : 10px 30px;
+  background: none;
+  cursor: pointer;
+}
+
+@mixin btn-hover($bg){
+  @include btn;
+  &:hover{
+    background: $bg;
+  } 
+} //함수이다. 매개변수 받을 수 있다
+
+@mixin icon($psuedo,$code){
+  &::#{$psuedo}{
+    content: $code; //"\f007"
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Font Awesome 5 Free"; 
+    font-weight: 900; 
+  }
+}
