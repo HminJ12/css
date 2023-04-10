@@ -1,0 +1,231 @@
+.ex1{
+  perspective: 1000px; /* 원근감, 값이 작으면 작을수록 원근감이 커진다 */
+  width: 300px;
+  height: 400px;
+  margin: 50px auto;
+  background: #000;
+  &:hover{
+    .sheet{
+      transform: rotateY(-180deg);
+    }
+  } /* 튀지 않게 ex1에 hover를 주고 sheet에 변화를 넣는다 */
+  .sheet{
+    position: relative;
+    width: inherit;
+    height: inherit;
+    transform-style: preserve-3d; /* 이걸 설정해야 뒷면이 나온다 */
+    transform-origin: left center; /* 변형의 축 x축, y축 */
+    transition: transform 1s;
+
+    .paper{
+      position: absolute;
+      width: inherit;
+      height: inherit;
+      text-align: center;
+      line-height: 400px;
+      color: #FFF;
+      font-size: 3em;
+      backface-visibility: hidden;
+      /* 
+      rotateY나 rotateX를 사용할 때만 사용할 수 있는 속성 
+      한번 숨기면 영원히 숨겨진다
+      */
+      &.front{
+        background: blue;
+      }
+      &.back{
+        background: red;
+        transform: rotateY(180deg);
+      }
+    }
+  }
+}
+
+.ex2{
+  perspective: 1000px;
+  width: 400px;
+  height: 400px;
+  background: #000;
+  margin: 50px auto;
+  &:hover{
+    .sheet1{
+      transform: rotateX(180deg);
+    }
+    .sheet2{
+      transform: rotateX(-180deg);
+    }
+  }  
+  .sheet{
+    position: relative;
+    height: 200px;
+    box-sizing: border-box;
+    border: 3px solid green;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+    &.sheet1{
+      transform-origin: center top; 
+    }
+    &.sheet2{
+      transform-origin: center bottom;
+    }
+    .paper{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      line-height: 200px;
+      color: #FFF;
+      font-size: 3em;
+      backface-visibility: hidden;
+      &.front{
+        background: blue;
+      }
+      &.back{
+        background: red;
+        transform: rotateX(180deg);
+      }
+    }
+  }
+}
+
+.ex3{
+  perspective: 1000px;
+  width: 400px;
+  height: 400px;
+  background: #000;
+  margin: 50px auto;
+  @media screen and (min-width:1000px) {
+    display: flex;
+    &:hover{
+      .sheet1{
+        transform: rotateY(-180deg);
+      }
+      .sheet2{
+        transform: rotateY(180deg);
+      }
+    }
+  } /* lg */
+  @media screen and (max-width:1000px) {
+    &:hover{
+      .sheet1{
+        transform: rotateX(180deg);
+      }
+      .sheet2{
+        transform: rotateX(-180deg);
+      }
+    }
+  } /* sm */
+
+  .sheet{
+    position: relative;
+    transform-style: preserve-3d;
+    box-sizing: border-box;
+    border: 3px solid green;
+    transition: transform 1s;
+    @media screen and (min-width:1000px) {
+      width: 50%;
+      height: 100%;
+      &.sheet1{
+        transform-origin: left center;
+      }
+      &.sheet2{
+        transform-origin: right center;
+      }
+    } /* lg */
+    @media screen and (max-width:1000px) {
+      width: 100%;
+      height: 50%;
+      &.sheet1{
+        transform-origin: center top;
+      }
+      &.sheet2{
+        transform-origin: center bottom;
+      }
+    } /* sm */
+
+    .paper{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      backface-visibility: hidden;
+      width: 100%;
+      height: 100%;
+      color: #FFF;
+      &.front{
+        background: blue;
+      }
+      &.back{
+        background: red;
+        @media screen and (min-width:1000px) {
+          transform: rotateY(180deg);
+        }
+        @media screen and (max-width:1000px) {
+          transform: rotateX(180deg);
+        }
+      }
+    }
+  }
+} /* ex3 */
+
+/* cube */
+.cube{
+  perspective: 1000px;
+  width: 300px;
+  height: 300px;
+  margin: 100px auto;
+  &.front .wrap{transform: rotateX(0deg) rotateY(0deg);}
+  &.right .wrap{transform: rotateX(0deg) rotateY(-90deg);}
+  &.left .wrap{transform: rotateX(0deg) rotateY(90deg);}
+  &.back .wrap{transform: rotateX(0deg) rotateY(180deg);}
+  &.top .wrap{transform: rotateX(-90deg) rotateY(0deg);}
+  &.bottom .wrap{transform: rotateX(90deg) rotateY(0deg);}
+  .wrap{
+    position: relative;
+    width: inherit;
+    height: inherit;
+    transform-style: preserve-3d; /* 감싸는 거 할 때는 무조건 해야 한다 */
+    transition: all 1s;
+    &:hover{
+      /* transform: rotateX(0deg) rotateY(0deg); front*/
+      /* transform: rotateX(0deg) rotateY(-90deg); right*/
+      /* transform: rotateX(0deg) rotateY(90deg); left */
+      /* transform: rotateX(0deg) rotateY(180deg); back*/
+      /* transform: rotateX(-90deg) rotateY(0deg); top */
+      /* transform: rotateX(90deg) rotateY(0deg); bottom*/
+    }
+    .face{
+      position: absolute;
+      width: inherit;
+      height: inherit;
+      text-align: center;
+      line-height: 300px;
+      font-size: 1.5em;
+      color: #FFF;
+      &.front{
+        background: rgba(rgb(69, 165, 255),0.7);
+        transform: rotateX(0deg) rotateY(0deg) translateZ(150px);
+      }
+      &.back{
+        background: rgba(rgb(255, 153, 0),0.7);
+        transform: rotateX(0deg) rotateY(180deg) translateZ(150px);
+      }
+      &.right{
+        background: rgba(red,0.7); /* 일반 css에서는 사용 불가 */
+        transform: rotateX(0deg) rotateY(90deg) translateZ(150px);
+      } /* 무조건 회전 먼저 해야 한다  */
+      &.left{
+        background: rgba(yellow,0.7);
+        transform: rotateX(0deg) rotateY(-90deg) translateZ(150px);
+      }
+      &.top{
+        background: rgba(rgb(255, 0, 55),0.7);
+        transform: rotateX(90deg) rotateY(0deg) translateZ(150px);
+      }
+      &.bottom{
+        background: rgba(rgb(131, 248, 160),0.7);
+        transform: rotateX(-90deg) rotateY(0deg) translateZ(150px);
+      }
+    }
+  }
+}

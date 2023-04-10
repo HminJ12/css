@@ -1,0 +1,250 @@
+@charset "UTF-8";
+.ex1 {
+  perspective: 1000px; /* 원근감, 값이 작으면 작을수록 원근감이 커진다 */
+  width: 300px;
+  height: 400px;
+  margin: 50px auto;
+  background: #000;
+  /* 튀지 않게 ex1에 hover를 주고 sheet에 변화를 넣는다 */
+}
+.ex1:hover .sheet {
+  transform: rotateY(-180deg);
+}
+.ex1 .sheet {
+  position: relative;
+  width: inherit;
+  height: inherit;
+  transform-style: preserve-3d; /* 이걸 설정해야 뒷면이 나온다 */
+  transform-origin: left center; /* 변형의 축 x축, y축 */
+  transition: transform 1s;
+}
+.ex1 .sheet .paper {
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  text-align: center;
+  line-height: 400px;
+  color: #FFF;
+  font-size: 3em;
+  backface-visibility: hidden;
+  /* 
+  rotateY나 rotateX를 사용할 때만 사용할 수 있는 속성 
+  한번 숨기면 영원히 숨겨진다
+  */
+}
+.ex1 .sheet .paper.front {
+  background: blue;
+}
+.ex1 .sheet .paper.back {
+  background: red;
+  transform: rotateY(180deg);
+}
+
+.ex2 {
+  perspective: 1000px;
+  width: 400px;
+  height: 400px;
+  background: #000;
+  margin: 50px auto;
+}
+.ex2:hover .sheet1 {
+  transform: rotateX(180deg);
+}
+.ex2:hover .sheet2 {
+  transform: rotateX(-180deg);
+}
+.ex2 .sheet {
+  position: relative;
+  height: 200px;
+  box-sizing: border-box;
+  border: 3px solid green;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
+.ex2 .sheet.sheet1 {
+  transform-origin: center top;
+}
+.ex2 .sheet.sheet2 {
+  transform-origin: center bottom;
+}
+.ex2 .sheet .paper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  line-height: 200px;
+  color: #FFF;
+  font-size: 3em;
+  backface-visibility: hidden;
+}
+.ex2 .sheet .paper.front {
+  background: blue;
+}
+.ex2 .sheet .paper.back {
+  background: red;
+  transform: rotateX(180deg);
+}
+
+.ex3 {
+  perspective: 1000px;
+  width: 400px;
+  height: 400px;
+  background: #000;
+  margin: 50px auto;
+  /* lg */
+  /* sm */
+}
+@media screen and (min-width: 1000px) {
+  .ex3 {
+    display: flex;
+  }
+  .ex3:hover .sheet1 {
+    transform: rotateY(-180deg);
+  }
+  .ex3:hover .sheet2 {
+    transform: rotateY(180deg);
+  }
+}
+@media screen and (max-width: 1000px) {
+  .ex3:hover .sheet1 {
+    transform: rotateX(180deg);
+  }
+  .ex3:hover .sheet2 {
+    transform: rotateX(-180deg);
+  }
+}
+.ex3 .sheet {
+  position: relative;
+  transform-style: preserve-3d;
+  box-sizing: border-box;
+  border: 3px solid green;
+  transition: transform 1s;
+  /* lg */
+  /* sm */
+}
+@media screen and (min-width: 1000px) {
+  .ex3 .sheet {
+    width: 50%;
+    height: 100%;
+  }
+  .ex3 .sheet.sheet1 {
+    transform-origin: left center;
+  }
+  .ex3 .sheet.sheet2 {
+    transform-origin: right center;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .ex3 .sheet {
+    width: 100%;
+    height: 50%;
+  }
+  .ex3 .sheet.sheet1 {
+    transform-origin: center top;
+  }
+  .ex3 .sheet.sheet2 {
+    transform-origin: center bottom;
+  }
+}
+.ex3 .sheet .paper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  backface-visibility: hidden;
+  width: 100%;
+  height: 100%;
+  color: #FFF;
+}
+.ex3 .sheet .paper.front {
+  background: blue;
+}
+.ex3 .sheet .paper.back {
+  background: red;
+}
+@media screen and (min-width: 1000px) {
+  .ex3 .sheet .paper.back {
+    transform: rotateY(180deg);
+  }
+}
+@media screen and (max-width: 1000px) {
+  .ex3 .sheet .paper.back {
+    transform: rotateX(180deg);
+  }
+}
+
+/* ex3 */
+/* cube */
+.cube {
+  perspective: 1000px;
+  width: 300px;
+  height: 300px;
+  margin: 100px auto;
+}
+.cube.front .wrap {
+  transform: rotateX(0deg) rotateY(0deg);
+}
+.cube.right .wrap {
+  transform: rotateX(0deg) rotateY(-90deg);
+}
+.cube.left .wrap {
+  transform: rotateX(0deg) rotateY(90deg);
+}
+.cube.back .wrap {
+  transform: rotateX(0deg) rotateY(180deg);
+}
+.cube.top .wrap {
+  transform: rotateX(-90deg) rotateY(0deg);
+}
+.cube.bottom .wrap {
+  transform: rotateX(90deg) rotateY(0deg);
+}
+.cube .wrap {
+  position: relative;
+  width: inherit;
+  height: inherit;
+  transform-style: preserve-3d; /* 감싸는 거 할 때는 무조건 해야 한다 */
+  transition: all 1s;
+}
+.cube .wrap:hover {
+  /* transform: rotateX(0deg) rotateY(0deg); front*/
+  /* transform: rotateX(0deg) rotateY(-90deg); right*/
+  /* transform: rotateX(0deg) rotateY(90deg); left */
+  /* transform: rotateX(0deg) rotateY(180deg); back*/
+  /* transform: rotateX(-90deg) rotateY(0deg); top */
+  /* transform: rotateX(90deg) rotateY(0deg); bottom*/
+}
+.cube .wrap .face {
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  text-align: center;
+  line-height: 300px;
+  font-size: 1.5em;
+  color: #FFF;
+  /* 무조건 회전 먼저 해야 한다  */
+}
+.cube .wrap .face.front {
+  background: rgba(69, 165, 255, 0.7);
+  transform: rotateX(0deg) rotateY(0deg) translateZ(150px);
+}
+.cube .wrap .face.back {
+  background: rgba(255, 153, 0, 0.7);
+  transform: rotateX(0deg) rotateY(180deg) translateZ(150px);
+}
+.cube .wrap .face.right {
+  background: rgba(255, 0, 0, 0.7); /* 일반 css에서는 사용 불가 */
+  transform: rotateX(0deg) rotateY(90deg) translateZ(150px);
+}
+.cube .wrap .face.left {
+  background: rgba(255, 255, 0, 0.7);
+  transform: rotateX(0deg) rotateY(-90deg) translateZ(150px);
+}
+.cube .wrap .face.top {
+  background: rgba(255, 0, 55, 0.7);
+  transform: rotateX(90deg) rotateY(0deg) translateZ(150px);
+}
+.cube .wrap .face.bottom {
+  background: rgba(131, 248, 160, 0.7);
+  transform: rotateX(-90deg) rotateY(0deg) translateZ(150px);
+}/*# sourceMappingURL=style.css.map */
