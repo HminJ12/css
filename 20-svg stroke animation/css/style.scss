@@ -1,0 +1,110 @@
+.ex1{
+  svg{
+    display: block;
+    margin: 30px auto;
+    width: 300px;
+    height: 300px;
+    border: 1px solid green;
+    rect{
+      x:50px;
+      y:50px;
+      width: 200px;
+      height: 200px;
+      fill: none;
+      stroke: blue;
+      stroke-width: 10px;
+      stroke-dasharray: 20px; //점선
+      /* stroke-dashoffset: 0; //디폴트가 0이다 시작점을 미는 거*/
+      animation: dash-offset 10s infinite linear;
+    }
+  }
+}
+@keyframes dash-offset{
+  0%{stroke-dashoffset: 0;}
+  100%{stroke-dashoffset: -800px;}
+}
+
+.ex2{
+  svg{
+    display: block;
+    margin: 30px auto;
+    width: 300px;
+    height: 300px;
+    border: 1px solid green;
+    rect{
+      x:50px;
+      y:50px;
+      width: 200px;
+      height: 200px;
+      fill: none;
+      stroke: blue;
+      stroke-width: 10px;
+      stroke-dasharray: 800px;
+      stroke-dashoffset: 800px;
+      transition: stroke-dashoffset 1s;
+    }
+    &:hover{
+      rect{
+        stroke-dashoffset: 0;
+      }
+    }
+  }
+}
+
+.ex3{
+  svg{
+    display: block;
+    margin: 30px auto;
+    width: 300px;
+    height: 300px;
+    border: 1px solid green;
+    circle{
+      cx:150px;
+      cy:150px;
+      r:100px;
+      fill: none;
+      pointer-events: all;
+      transition:stroke-dashoffset 1s ;
+      transform-origin: center;
+      transform: rotate(-90deg);
+      /* &:hover{
+        stroke-dashoffset: 0;
+      } */
+      &.circle1{
+        stroke: #CCC;
+        stroke-width: 3px;
+
+      }
+      &.circle2{
+        stroke: #000;
+        stroke-width: 10px;
+        stroke-dasharray: 360px;
+        stroke-dashoffset: 360px; //90deg -> 270px
+      }
+    }
+  }
+}
+
+.ex4{
+  width: min(90%, 800px);
+  margin: 30px auto;
+  &.active{
+    svg path{
+      stroke-dashoffset: 0;
+      fill: #000;
+      transition-delay:0s, 1s;
+    }
+  } //active  
+  svg{
+    display: block;
+    width: 100%;
+    path{
+      fill: white;
+      stroke: royalblue;
+      stroke-dasharray: 50px;
+      stroke-dashoffset: 50px;
+      transition: stroke-dashoffset 2s, fill 1s;
+    }
+  }
+  
+}

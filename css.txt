@@ -1194,3 +1194,48 @@ perspective: 1000px; /* 원근감, 값이 작으면 작을수록 원근감이 �
 css cube 만들기
 
 transform은 자기 기준이다.
+
+-----------------------------
+svg
+벡터를 출력하는 방식
+
+웹gl, 웹그래픽
+
+캔버스, svg
+
+도형, 자잘한 거는 svg
+
+canvas는 화면 전체, 게임 만들 때, 고급진 거
+
+svg->inline block레벨
+
+xml 문법 
+셀프 클로징 <input />
+단독 태그 
+
+svg안의 속성
+viewbox 
+가로 세로 비율 알려주는 거
+넓이만 바꾸면 높이가 알아서 바뀐다.
+넓이나 높이 하나만 알려주면 알아서 바꿔준다.
+
+
+원래 사이즈
+레이티오를 유지하기 위한 목적이다.
+
+preserveAspectRatio=""
+크기를 다 지정했을 때 사용함
+가로, 세로 비율을 깰 때 사용!!
+
+preserveAspectRatio="none"
+
+
+점선은 무한 반복된다
+점선 offset을 하면 점선이 밀린다
+그러면 움직이는 것처럼 보인다
+stroke-dashoffset: -800px;
+
+
+pathLength=""
+길이를 몇으로 우기겠다. 내가 길이를 모를 때
+
