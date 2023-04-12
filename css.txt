@@ -1239,3 +1239,21 @@ stroke-dashoffset: -800px;
 pathLength=""
 길이를 몇으로 우기겠다. 내가 길이를 모를 때
 
+-----------------------------
+점의 갯수가 동일해야 자연스러운 애니메이션을 만들 수 있다.
+
+<defs></defs>
+숨기는 거 
+
+
+<clipPath id="mask"></clipPath>  ->mask
+
+특정 영역만 보인다.
+가린다
+clipPath는 id만 줄 수 있다, class는 못 준다!
+
+
+마스크를 씌운다.
+clip-path="url(#mask)"
+
+
