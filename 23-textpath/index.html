@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="https://code.jquery.com/jquery-latest.js"></script>
+  <script src="./js/morphsvg.js"></script>
+  <script src="./js/tweenmax.js"></script>
+  <script src="./js/common.js"></script>
+  <script src="./js/script.js"></script>
+  <title>Document</title>
+</head>
+<body>
+  <div class="ex1">
+    <svg viewBox="0 0 1000 332.23">
+      <path id="ex1-path" fill="none" stroke="#231f20" stroke-miterlimit="10" d="M0,126.05c199.73-240.91,748,384.09,1000,54.55"/>
+      <text>
+        <textpath href="#ex1-path">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          <animate attributeName="startOffset" from="-50%" to="100%" repeatCount="indefinite" dur="5s"/>
+        </textpath>
+      </text>
+    </svg>
+  </div>
+  <hr>
+  <div class="ex2">
+    <svg viewBox="0 0 1000 332.23">
+      <path id="ex2-path" fill="none" stroke="#231f20" stroke-miterlimit="10" d="M0,126.05c199.73-240.91,748,384.09,1000,54.55"/>
+      <defs>
+        <path class="path1" fill="none" stroke="blue" d="M0,126.05C416.77,427.68,607.68-165.5,1000,180.6"/>
+        <path class="path2" fill="none" stroke="#231f20" stroke-miterlimit="10" d="M0,126.05c199.73-240.91,748,384.09,1000,54.55"/>
+      </defs>
+      <text>
+        <textpath href="#ex2-path">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          <!-- <animate attributeName="startOffset" from="-50%" to="100%" repeatCount="indefinite" dur="5s"/> -->
+          <animate attributeName="startOffset" values="-50%; 100%" repeatCount="indefinite" dur="5s"/>
+        </textpath>
+      </text>
+    </svg>
+  </div>
+</body>
+</html>

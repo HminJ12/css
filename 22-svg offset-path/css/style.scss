@@ -1,0 +1,18 @@
+.ex1{
+  width: min(90%, 500px);
+  margin: 30px auto;
+  svg{
+    display: block;
+    width: 100%;
+    .obj{
+      offset-path: path("M891.88 500c0 216.43-175.45 391.88-391.88 391.88S108.12 716.43 108.12 500 283.57 108.12 500 108.12 891.88 283.57 891.88 500z");
+      /* offset-distance: 50%; */
+      transition: offset-distance 1s;
+    }
+    &:hover{
+      .obj{
+        offset-distance: 100%;
+      }
+    }
+  }
+}
